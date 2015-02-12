@@ -18,6 +18,7 @@ public class MainActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_main);
 
+
         //this is where I told the button what to do
         final Button button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +35,23 @@ public class MainActivity extends ActionBarActivity {
                         .show();
             }
         });
+
+        final Button button2 = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Yay")
+                        .setMessage("Button Works!")
+                        .setPositiveButton(android.R.string.ok,new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .show();
+            }
+        });
+
 
     }
 
